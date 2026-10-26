@@ -26,5 +26,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run test suite
+        env:
+          API_KEY: dev-secret-key
+          REPOSITORIES: repo-context-ai:.
+          APP_ENV: testing
         run: |
           pytest
