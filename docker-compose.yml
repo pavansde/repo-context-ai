@@ -1,0 +1,35 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# RepoContext AI — docker-compose.yml
+#
+# Usage:
+#   1. cp .env.example .env && edit .env
+#   2. docker compose up
+#
+# Ollama is expected to run on the host or a separate service.
+# Set OLLAMA_HOST in .env to point to it.
+# ─────────────────────────────────────────────────────────────────────────────
+
+services:
+  repo-context-ai:
+    build: .
+    image: repo-context-ai:latest
+    container_name: repo-context-ai
+    restart: unless-stopped
+
+    env_file:
+      - .env
+
+    ports:
+      - "${API_PORT:-8000}:8000"
+
+    volumes:
+      # Persist Chroma vector store and SQLite checkpoint DB across restarts.
+      - ./data:/app/data
+
+    healthcheck:
+      test: ["CMD", "python", "-c",
+             "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"]
+      interval: 30s
+      timeout: 10s
+      start_period: 20s
+      retries: 3

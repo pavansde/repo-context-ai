@@ -1,0 +1,159 @@
+{
+  "repository_id": "repo-context-ai",
+  "k": 3,
+  "reranker_enabled": false,
+  "total_questions": 8,
+  "retrieval_questions": 7,
+  "metrics": {
+    "mean_precision_at_3": 0.3333,
+    "mean_recall_at_3": 1.0
+  },
+  "results": [
+    {
+      "question": "Where is the repository indexing pipeline implemented?",
+      "expected_sources": [
+        "rag.py"
+      ],
+      "retrieved_sources": [
+        "rag.py",
+        "core/repository_registry.py"
+      ],
+      "top_k_sources": [
+        "rag.py",
+        "core/repository_registry.py"
+      ],
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 1.0
+    },
+    {
+      "question": "Which file creates the repository tools used by the agent?",
+      "expected_sources": [
+        "agent/tools.py"
+      ],
+      "retrieved_sources": [
+        "core/app_state.py",
+        "agent/graph.py",
+        "agent/tools.py",
+        "tests/test_agent.py"
+      ],
+      "top_k_sources": [
+        "core/app_state.py",
+        "agent/graph.py",
+        "agent/tools.py"
+      ],
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 1.0
+    },
+    {
+      "question": "Where is the LangGraph repository agent constructed?",
+      "expected_sources": [
+        "agent/graph.py"
+      ],
+      "retrieved_sources": [
+        "agent/tools.py",
+        "agent/graph.py",
+        "tests/test_agent.py",
+        "tests/test_agent_memory.py"
+      ],
+      "top_k_sources": [
+        "agent/tools.py",
+        "agent/graph.py",
+        "tests/test_agent.py"
+      ],
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 1.0
+    },
+    {
+      "question": "Where is the FastAPI application and its lifespan configured?",
+      "expected_sources": [
+        "app.py"
+      ],
+      "retrieved_sources": [
+        "app.py",
+        "tests/test_api.py",
+        "api/authorization.py",
+        "api/auth.py",
+        "core/model_factory.py"
+      ],
+      "top_k_sources": [
+        "app.py",
+        "tests/test_api.py",
+        "api/authorization.py"
+      ],
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 1.0
+    },
+    {
+      "question": "Which component validates API Bearer keys?",
+      "expected_sources": [
+        "api/auth.py"
+      ],
+      "retrieved_sources": [
+        "api/auth.py",
+        "tests/test_api.py",
+        "core/config.py"
+      ],
+      "top_k_sources": [
+        "api/auth.py",
+        "tests/test_api.py",
+        "core/config.py"
+      ],
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 1.0
+    },
+    {
+      "question": "What is the maximum file size allowed by inspect_file?",
+      "expected_sources": [
+        "agent/tools.py"
+      ],
+      "retrieved_sources": [
+        "agent/tools.py",
+        "core/config.py",
+        "rag.py"
+      ],
+      "top_k_sources": [
+        "agent/tools.py",
+        "core/config.py",
+        "rag.py"
+      ],
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 1.0
+    },
+    {
+      "question": "Which database-backed checkpointer persists agent conversation state?",
+      "expected_sources": [
+        "core/app_state.py"
+      ],
+      "retrieved_sources": [
+        "tests/test_agent_memory.py",
+        "core/app_state.py",
+        "agent/graph.py"
+      ],
+      "top_k_sources": [
+        "tests/test_agent_memory.py",
+        "core/app_state.py",
+        "agent/graph.py"
+      ],
+      "precision_at_k": 0.3333333333333333,
+      "recall_at_k": 1.0
+    },
+    {
+      "question": "What is the company's production revenue for the current quarter?",
+      "expected_sources": [],
+      "retrieved_sources": [
+        "core/config.py",
+        "rag.py",
+        "core/repository_registry.py",
+        "tests/test_repository_isolation.py",
+        "README.md"
+      ],
+      "top_k_sources": [
+        "core/config.py",
+        "rag.py",
+        "core/repository_registry.py"
+      ],
+      "precision_at_k": 0.0,
+      "recall_at_k": 0.0
+    }
+  ]
+}

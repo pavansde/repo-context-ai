@@ -1,0 +1,19 @@
+# Docker ignore file for RepoContext AI
+.git
+.gitignore
+*.md
+venv/
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+data/
+.env
+.env.*
+!.env.example
+tests/
+*.log
+Dockerfile
+docker-compose.yml
